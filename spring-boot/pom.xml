@@ -8,8 +8,8 @@
 		<artifactId>hello</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>boot</artifactId>
-	<name>boot</name>
+	<artifactId>spring-boot</artifactId>
+	<name>spring-boot</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>spring-hello</name>
+	<name>spring</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -39,6 +39,7 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>boot</module>
+		<module>spring-boot</module>
+		<module>spring-boot-upload</module>
 	</modules>
 </project>
