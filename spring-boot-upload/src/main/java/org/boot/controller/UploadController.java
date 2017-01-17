@@ -1,5 +1,7 @@
 package org.boot.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
 import org.slf4j.Logger;
@@ -26,7 +28,11 @@ public class UploadController {
 			@RequestParam("start") int start,
 			@RequestParam("end") int end,
 			@RequestParam("speed") int speed,
-			@RequestParam("repeat") int repeat) {
-		return null;
+			@RequestParam("repeat") int repeat) throws IllegalStateException, IOException {
+		File videoFile = new File(location + File.separator + System.currentTimeMillis() + ".mp4");
+		file.transferTo(videoFile);
+		
+		log.info("Saved file to {}", videoFile.getAbsolutePath());
+		return "";
 	}
 }
