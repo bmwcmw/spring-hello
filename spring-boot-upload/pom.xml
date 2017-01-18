@@ -45,6 +45,7 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Reload changes automatically -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
