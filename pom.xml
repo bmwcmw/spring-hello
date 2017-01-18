@@ -40,6 +40,5 @@
 
 	<modules>
 		<module>spring-boot</module>
-		<module>spring-boot-upload</module>
 	</modules>
 </project>

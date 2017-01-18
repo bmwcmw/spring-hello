@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+// curl -F file=@SampleVideo_1280x720_1mb.mp4 -F start=0 -F end=0 -F speed=1 -F repeat=0 localhost:8080/upload
 @RestController
 public class UploadController {
 	
