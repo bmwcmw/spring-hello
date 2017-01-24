@@ -7,5 +7,4 @@ import angular_loading_bar from 'angular-loading-bar';
 import config from './config';
 import home from './home';
 
-angular.module('app', [angular_ui_router, angular_loading_bar, home])
-    .config(config);
+angular.module('app', [angular_ui_router, angular_loading_bar, home]).config(config);
