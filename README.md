@@ -1,10 +1,8 @@
-spring-hello ==> mvn clean install can produce jar
-|
-|--> spring-boot ==> run main class : Application.java
-|
-spring-boot-upload ==> see README inside
-|
-spring-boot-spring-security-thymeleaf ==> run main class : SpringBootWebApplication.java
+* spring-hello ==> mvn clean install can produce jar
+  - spring-boot ==> run main class : Application.java
+
+* spring-boot-upload ==> see README inside
+* spring-boot-spring-security-thymeleaf ==> run main class : SpringBootWebApplication.java
 
 
 ## About
