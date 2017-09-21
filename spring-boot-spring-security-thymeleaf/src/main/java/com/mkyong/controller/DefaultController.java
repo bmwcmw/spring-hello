@@ -36,6 +36,11 @@ public class DefaultController {
         return "/login";
     }
 
+    @GetMapping("/registration")
+    public String registration() {
+        return "/registration";
+    }
+
     @GetMapping("/403")
     public String error403() {
         return "/error/403";
