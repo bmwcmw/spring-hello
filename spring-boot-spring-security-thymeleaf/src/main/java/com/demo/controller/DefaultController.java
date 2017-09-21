@@ -1,6 +1,9 @@
 package com.demo.controller;
 
 import com.demo.DemoUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +17,12 @@ import javax.validation.Valid;
 
 @Controller
 public class DefaultController {
+    /**
+     * com.demo.config.SpringSecurityConfig#inMemoryUserDetailsManager(
+     * org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder)
+     */
+    @Autowired
+    UserDetailsManager userDetailsManager;
 
     @GetMapping("/")
     public String home1() {
@@ -54,10 +63,14 @@ public class DefaultController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid @ModelAttribute("user") DemoUser user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
+        // this.userDetailsManager is created as new bean and doesn't contains created user(SpringSecurityConfig) ??
+        // should use JDBC / JdbcUserDetailsManager instead ??
 
 //        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 //        authorities.add(new SimpleGrantedAuthority("USER"));
 //        UserDetails userDetails = new DemoUser(user.getUsername(), user.getPassword(), authorities);
+
+        // BindingResult already deals this with @Valid annotation
 //        if (userExists != null) {
 //            bindingResult
 //                    .rejectValue("email", "error.user",
@@ -70,7 +83,6 @@ public class DefaultController {
 //            modelAndView.addObject("successMessage", "User has been registered successfully");
 //            modelAndView.addObject("user", new DemoUser());
 //            modelAndView.setViewName("registration");
-//
 //        }
         return modelAndView;
     }
